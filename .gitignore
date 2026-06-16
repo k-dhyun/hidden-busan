@@ -35,6 +35,7 @@ server/src/main/resources/application-local.properties
 server/src/main/resources/application-local.yml
 server/src/main/resources/application-dev.properties
 server/src/main/resources/application-dev.yml
+server/src/main/resources/application.properties
 
 ### Client ###
 client/node_modules/

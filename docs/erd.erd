@@ -1,0 +1,2013 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dineug/erd-editor/main/json-schema/schema.json",
+  "version": "3.0.0",
+  "settings": {
+    "width": 2600,
+    "height": 2000,
+    "scrollTop": -495.7948,
+    "scrollLeft": -645.2886,
+    "zoomLevel": 0.52,
+    "show": 511,
+    "database": 1,
+    "databaseName": "hidden_busan",
+    "canvasType": "ERD",
+    "language": 32,
+    "tableNameCase": 8,
+    "columnNameCase": 8,
+    "bracketType": 8,
+    "relationshipDataTypeSync": true,
+    "relationshipOptimization": true,
+    "columnOrder": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "maxWidthComment": 180,
+    "ignoreSaveSettings": 0
+  },
+  "doc": {
+    "tableIds": [
+      "users",
+      "contents",
+      "missions",
+      "favorites",
+      "mission_completions",
+      "reviews",
+      "collection_shares",
+      "achievements",
+      "user_passport_stats"
+    ],
+    "relationshipIds": [
+      "r_users_favorites",
+      "r_contents_favorites",
+      "r_contents_missions",
+      "r_users_mission_completions",
+      "r_missions_mission_completions",
+      "r_contents_mission_completions",
+      "r_users_reviews",
+      "r_contents_reviews",
+      "r_users_collection_shares",
+      "r_users_user_passport_stats"
+    ],
+    "indexIds": [],
+    "memoIds": []
+  },
+  "collections": {
+    "tableEntities": {
+      "users": {
+        "id": "users",
+        "name": "users",
+        "comment": "이메일/비밀번호 JWT 사용자",
+        "columnIds": [
+          "users_id",
+          "users_email",
+          "users_password",
+          "users_nickname",
+          "users_avatar_url",
+          "users_created_at",
+          "users_updated_at"
+        ],
+        "seqColumnIds": [
+          "users_id",
+          "users_email",
+          "users_password",
+          "users_nickname",
+          "users_avatar_url",
+          "users_created_at",
+          "users_updated_at"
+        ],
+        "ui": {
+          "x": 80,
+          "y": 80,
+          "zIndex": 1,
+          "widthName": 60,
+          "widthComment": 142,
+          "color": "#ECEBFF"
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "contents": {
+        "id": "contents",
+        "name": "contents",
+        "comment": "지도/장소 카드 콘텐츠",
+        "columnIds": [
+          "contents_id",
+          "contents_name",
+          "contents_region",
+          "contents_category",
+          "contents_difficulty",
+          "contents_description",
+          "contents_address",
+          "contents_image_url",
+          "contents_duration",
+          "contents_best_time",
+          "contents_latitude",
+          "contents_longitude",
+          "contents_map_x",
+          "contents_map_y",
+          "contents_created_at",
+          "contents_updated_at"
+        ],
+        "seqColumnIds": [
+          "contents_id",
+          "contents_name",
+          "contents_region",
+          "contents_category",
+          "contents_difficulty",
+          "contents_description",
+          "contents_address",
+          "contents_image_url",
+          "contents_duration",
+          "contents_best_time",
+          "contents_latitude",
+          "contents_longitude",
+          "contents_map_x",
+          "contents_map_y",
+          "contents_created_at",
+          "contents_updated_at"
+        ],
+        "ui": {
+          "x": 1441.3636,
+          "y": 589.0909,
+          "zIndex": 1,
+          "widthName": 60,
+          "widthComment": 106,
+          "color": "#E7F3FF"
+        },
+        "meta": {
+          "updateAt": 1781522839386,
+          "createAt": 1781107200000
+        }
+      },
+      "missions": {
+        "id": "missions",
+        "name": "missions",
+        "comment": "장소별 도전 미션",
+        "columnIds": [
+          "missions_id",
+          "missions_content_id",
+          "missions_title",
+          "missions_description",
+          "missions_created_at",
+          "missions_updated_at"
+        ],
+        "seqColumnIds": [
+          "missions_id",
+          "missions_content_id",
+          "missions_title",
+          "missions_description",
+          "missions_created_at",
+          "missions_updated_at"
+        ],
+        "ui": {
+          "x": 1424.0909,
+          "y": 120.9091,
+          "zIndex": 1,
+          "widthName": 60,
+          "widthComment": 81,
+          "color": "#FFF7E8"
+        },
+        "meta": {
+          "updateAt": 1781522830355,
+          "createAt": 1781107200000
+        }
+      },
+      "favorites": {
+        "id": "favorites",
+        "name": "favorites",
+        "comment": "사용자 찜 기록",
+        "columnIds": [
+          "favorites_id",
+          "favorites_user_id",
+          "favorites_content_id",
+          "favorites_created_at"
+        ],
+        "seqColumnIds": [
+          "favorites_id",
+          "favorites_user_id",
+          "favorites_content_id",
+          "favorites_created_at"
+        ],
+        "ui": {
+          "x": 716.8182,
+          "y": 849.5454,
+          "zIndex": 1,
+          "widthName": 60,
+          "widthComment": 71,
+          "color": "#FFECEC"
+        },
+        "meta": {
+          "updateAt": 1781522841417,
+          "createAt": 1781107200000
+        }
+      },
+      "mission_completions": {
+        "id": "mission_completions",
+        "name": "mission_completions",
+        "comment": "미션 완료와 패스포트 기록",
+        "columnIds": [
+          "mission_completions_id",
+          "mission_completions_user_id",
+          "mission_completions_mission_id",
+          "mission_completions_content_id",
+          "mission_completions_photo_url",
+          "mission_completions_memo",
+          "mission_completions_completed_at"
+        ],
+        "seqColumnIds": [
+          "mission_completions_id",
+          "mission_completions_user_id",
+          "mission_completions_mission_id",
+          "mission_completions_content_id",
+          "mission_completions_photo_url",
+          "mission_completions_memo",
+          "mission_completions_completed_at"
+        ],
+        "ui": {
+          "x": 767.6136,
+          "y": 68.0682,
+          "zIndex": 1,
+          "widthName": 121,
+          "widthComment": 126,
+          "color": "#F2E9FF"
+        },
+        "meta": {
+          "updateAt": 1781522836575,
+          "createAt": 1781107200000
+        }
+      },
+      "reviews": {
+        "id": "reviews",
+        "name": "reviews",
+        "comment": "장소 리뷰",
+        "columnIds": [
+          "reviews_id",
+          "reviews_user_id",
+          "reviews_content_id",
+          "reviews_rating",
+          "reviews_comment",
+          "reviews_created_at",
+          "reviews_updated_at"
+        ],
+        "seqColumnIds": [
+          "reviews_id",
+          "reviews_user_id",
+          "reviews_content_id",
+          "reviews_rating",
+          "reviews_comment",
+          "reviews_created_at",
+          "reviews_updated_at"
+        ],
+        "ui": {
+          "x": 757.5,
+          "y": 392.7273,
+          "zIndex": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "color": "#E8FFF1"
+        },
+        "meta": {
+          "updateAt": 1781522836575,
+          "createAt": 1781107200000
+        }
+      },
+      "collection_shares": {
+        "id": "collection_shares",
+        "name": "collection_shares",
+        "comment": "패스포트 공유 링크",
+        "columnIds": [
+          "collection_shares_id",
+          "collection_shares_user_id",
+          "collection_shares_share_token",
+          "collection_shares_share_url",
+          "collection_shares_is_public",
+          "collection_shares_created_at",
+          "collection_shares_updated_at"
+        ],
+        "seqColumnIds": [
+          "collection_shares_id",
+          "collection_shares_user_id",
+          "collection_shares_share_token",
+          "collection_shares_share_url",
+          "collection_shares_is_public",
+          "collection_shares_created_at",
+          "collection_shares_updated_at"
+        ],
+        "ui": {
+          "x": 80,
+          "y": 820,
+          "zIndex": 1,
+          "widthName": 101,
+          "widthComment": 92,
+          "color": "#F6F6F6"
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "achievements": {
+        "id": "achievements",
+        "name": "achievements",
+        "comment": "패스포트 도전과제 기준 데이터",
+        "columnIds": [
+          "achievements_id",
+          "achievements_title",
+          "achievements_description",
+          "achievements_icon",
+          "achievements_condition_type",
+          "achievements_condition_value",
+          "achievements_condition_total",
+          "achievements_created_at",
+          "achievements_updated_at"
+        ],
+        "seqColumnIds": [
+          "achievements_id",
+          "achievements_title",
+          "achievements_description",
+          "achievements_icon",
+          "achievements_condition_type",
+          "achievements_condition_value",
+          "achievements_condition_total",
+          "achievements_created_at",
+          "achievements_updated_at"
+        ],
+        "ui": {
+          "x": 1440,
+          "y": 1040,
+          "zIndex": 8,
+          "widthName": 96,
+          "widthComment": 128,
+          "color": "#FFF4DE"
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "user_passport_stats": {
+        "id": "user_passport_stats",
+        "name": "user_passport_stats",
+        "comment": "패스포트 통계 계산 캐시",
+        "columnIds": [
+          "user_passport_stats_user_id",
+          "user_passport_stats_stamp_count",
+          "user_passport_stats_unlocked_achievement_count",
+          "user_passport_stats_updated_at"
+        ],
+        "seqColumnIds": [
+          "user_passport_stats_user_id",
+          "user_passport_stats_stamp_count",
+          "user_passport_stats_unlocked_achievement_count",
+          "user_passport_stats_updated_at"
+        ],
+        "ui": {
+          "x": 80,
+          "y": 520,
+          "zIndex": 9,
+          "widthName": 150,
+          "widthComment": 104,
+          "color": "#E2F5FF"
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      }
+    },
+    "tableColumnEntities": {
+      "users_id": {
+        "id": "users_id",
+        "tableId": "users",
+        "name": "id",
+        "comment": "PK",
+        "dataType": "bigint",
+        "default": "",
+        "options": 11,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "users_email": {
+        "id": "users_email",
+        "tableId": "users",
+        "name": "email",
+        "comment": "로그인 이메일, UK",
+        "dataType": "varchar(255)",
+        "default": "",
+        "options": 12,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 91,
+          "widthDataType": 75,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "users_password": {
+        "id": "users_password",
+        "tableId": "users",
+        "name": "password",
+        "comment": "암호화된 비밀번호",
+        "dataType": "varchar(255)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 88,
+          "widthDataType": 75,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "users_nickname": {
+        "id": "users_nickname",
+        "tableId": "users",
+        "name": "nickname",
+        "comment": "화면 표시 닉네임",
+        "dataType": "varchar(50)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 81,
+          "widthDataType": 68,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "users_avatar_url": {
+        "id": "users_avatar_url",
+        "tableId": "users",
+        "name": "avatar_url",
+        "comment": "프로필 이미지 URL",
+        "dataType": "varchar(500)",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 95,
+          "widthDataType": 76,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "users_created_at": {
+        "id": "users_created_at",
+        "tableId": "users",
+        "name": "created_at",
+        "comment": "가입 일시",
+        "dataType": "datetime",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 63,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "users_updated_at": {
+        "id": "users_updated_at",
+        "tableId": "users",
+        "name": "updated_at",
+        "comment": "수정 일시",
+        "dataType": "datetime",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 67,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "contents_id": {
+        "id": "contents_id",
+        "tableId": "contents",
+        "name": "id",
+        "comment": "PK",
+        "dataType": "bigint",
+        "default": "",
+        "options": 11,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "contents_name": {
+        "id": "contents_name",
+        "tableId": "contents",
+        "name": "name",
+        "comment": "장소 이름",
+        "dataType": "varchar(100)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 74,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "contents_region": {
+        "id": "contents_region",
+        "tableId": "contents",
+        "name": "region",
+        "comment": "지역",
+        "dataType": "varchar(50)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 68,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "contents_category": {
+        "id": "contents_category",
+        "tableId": "contents",
+        "name": "category",
+        "comment": "명소/축제/쇼핑/시장",
+        "dataType": "varchar(20)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 96,
+          "widthDataType": 68,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "contents_difficulty": {
+        "id": "contents_difficulty",
+        "tableId": "contents",
+        "name": "difficulty",
+        "comment": "쉬움/보통/어려움",
+        "dataType": "varchar(20)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 82,
+          "widthDataType": 68,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "contents_description": {
+        "id": "contents_description",
+        "tableId": "contents",
+        "name": "description",
+        "comment": "장소 설명",
+        "dataType": "text",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 65,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "contents_address": {
+        "id": "contents_address",
+        "tableId": "contents",
+        "name": "address",
+        "comment": "주소",
+        "dataType": "varchar(255)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 75,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "contents_image_url": {
+        "id": "contents_image_url",
+        "tableId": "contents",
+        "name": "image_url",
+        "comment": "대표 이미지 URL",
+        "dataType": "varchar(500)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 84,
+          "widthDataType": 76,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "contents_duration": {
+        "id": "contents_duration",
+        "tableId": "contents",
+        "name": "duration",
+        "comment": "예상 소요 시간",
+        "dataType": "varchar(50)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 71,
+          "widthDataType": 68,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "contents_best_time": {
+        "id": "contents_best_time",
+        "tableId": "contents",
+        "name": "best_time",
+        "comment": "추천 방문 시간",
+        "dataType": "varchar(100)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 71,
+          "widthDataType": 74,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "contents_latitude": {
+        "id": "contents_latitude",
+        "tableId": "contents",
+        "name": "latitude",
+        "comment": "실제 지도 위도",
+        "dataType": "decimal(10,7)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 71,
+          "widthDataType": 78,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "contents_longitude": {
+        "id": "contents_longitude",
+        "tableId": "contents",
+        "name": "longitude",
+        "comment": "실제 지도 경도",
+        "dataType": "decimal(10,7)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 71,
+          "widthDataType": 78,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "contents_map_x": {
+        "id": "contents_map_x",
+        "tableId": "contents",
+        "name": "map_x",
+        "comment": "SVG 지도 X 좌표",
+        "dataType": "int",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 86,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "contents_map_y": {
+        "id": "contents_map_y",
+        "tableId": "contents",
+        "name": "map_y",
+        "comment": "SVG 지도 Y 좌표",
+        "dataType": "int",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 86,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "contents_created_at": {
+        "id": "contents_created_at",
+        "tableId": "contents",
+        "name": "created_at",
+        "comment": "등록 일시",
+        "dataType": "datetime",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 63,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "contents_updated_at": {
+        "id": "contents_updated_at",
+        "tableId": "contents",
+        "name": "updated_at",
+        "comment": "수정 일시",
+        "dataType": "datetime",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 67,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "missions_id": {
+        "id": "missions_id",
+        "tableId": "missions",
+        "name": "id",
+        "comment": "PK",
+        "dataType": "bigint",
+        "default": "",
+        "options": 11,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "missions_content_id": {
+        "id": "missions_content_id",
+        "tableId": "missions",
+        "name": "content_id",
+        "comment": "FK contents.id, UK",
+        "dataType": "bigint",
+        "default": "",
+        "options": 12,
+        "ui": {
+          "keys": 2,
+          "widthName": 63,
+          "widthComment": 107,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "missions_title": {
+        "id": "missions_title",
+        "tableId": "missions",
+        "name": "title",
+        "comment": "미션 제목",
+        "dataType": "varchar(100)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 74,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "missions_description": {
+        "id": "missions_description",
+        "tableId": "missions",
+        "name": "description",
+        "comment": "미션 설명",
+        "dataType": "text",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 65,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "missions_created_at": {
+        "id": "missions_created_at",
+        "tableId": "missions",
+        "name": "created_at",
+        "comment": "등록 일시",
+        "dataType": "datetime",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 63,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "missions_updated_at": {
+        "id": "missions_updated_at",
+        "tableId": "missions",
+        "name": "updated_at",
+        "comment": "수정 일시",
+        "dataType": "datetime",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 67,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "favorites_id": {
+        "id": "favorites_id",
+        "tableId": "favorites",
+        "name": "id",
+        "comment": "PK",
+        "dataType": "bigint",
+        "default": "",
+        "options": 11,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "favorites_user_id": {
+        "id": "favorites_user_id",
+        "tableId": "favorites",
+        "name": "user_id",
+        "comment": "FK users.id",
+        "dataType": "bigint",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 60,
+          "widthComment": 65,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "favorites_content_id": {
+        "id": "favorites_content_id",
+        "tableId": "favorites",
+        "name": "content_id",
+        "comment": "FK contents.id",
+        "dataType": "bigint",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 63,
+          "widthComment": 84,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "favorites_created_at": {
+        "id": "favorites_created_at",
+        "tableId": "favorites",
+        "name": "created_at",
+        "comment": "찜 등록 일시",
+        "dataType": "datetime",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 63,
+          "widthComment": 61,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "mission_completions_id": {
+        "id": "mission_completions_id",
+        "tableId": "mission_completions",
+        "name": "id",
+        "comment": "PK",
+        "dataType": "bigint",
+        "default": "",
+        "options": 11,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "mission_completions_user_id": {
+        "id": "mission_completions_user_id",
+        "tableId": "mission_completions",
+        "name": "user_id",
+        "comment": "FK users.id",
+        "dataType": "bigint",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 60,
+          "widthComment": 65,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "mission_completions_mission_id": {
+        "id": "mission_completions_mission_id",
+        "tableId": "mission_completions",
+        "name": "mission_id",
+        "comment": "FK missions.id",
+        "dataType": "bigint",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 62,
+          "widthComment": 83,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "mission_completions_content_id": {
+        "id": "mission_completions_content_id",
+        "tableId": "mission_completions",
+        "name": "content_id",
+        "comment": "FK contents.id",
+        "dataType": "bigint",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 63,
+          "widthComment": 84,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "mission_completions_photo_url": {
+        "id": "mission_completions_photo_url",
+        "tableId": "mission_completions",
+        "name": "photo_url",
+        "comment": "미션 완료 사진 URL",
+        "dataType": "varchar(500)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 98,
+          "widthDataType": 76,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "mission_completions_memo": {
+        "id": "mission_completions_memo",
+        "tableId": "mission_completions",
+        "name": "memo",
+        "comment": "한 줄 메모",
+        "dataType": "varchar(255)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 75,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "mission_completions_completed_at": {
+        "id": "mission_completions_completed_at",
+        "tableId": "mission_completions",
+        "name": "completed_at",
+        "comment": "미션 완료 날짜",
+        "dataType": "date",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 80,
+          "widthComment": 71,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "reviews_id": {
+        "id": "reviews_id",
+        "tableId": "reviews",
+        "name": "id",
+        "comment": "PK",
+        "dataType": "bigint",
+        "default": "",
+        "options": 11,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "reviews_user_id": {
+        "id": "reviews_user_id",
+        "tableId": "reviews",
+        "name": "user_id",
+        "comment": "FK users.id",
+        "dataType": "bigint",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 60,
+          "widthComment": 65,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "reviews_content_id": {
+        "id": "reviews_content_id",
+        "tableId": "reviews",
+        "name": "content_id",
+        "comment": "FK contents.id",
+        "dataType": "bigint",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 63,
+          "widthComment": 84,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "reviews_rating": {
+        "id": "reviews_rating",
+        "tableId": "reviews",
+        "name": "rating",
+        "comment": "별점 1~5",
+        "dataType": "int",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "reviews_comment": {
+        "id": "reviews_comment",
+        "tableId": "reviews",
+        "name": "comment",
+        "comment": "리뷰 내용",
+        "dataType": "text",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "reviews_created_at": {
+        "id": "reviews_created_at",
+        "tableId": "reviews",
+        "name": "created_at",
+        "comment": "작성 일시",
+        "dataType": "datetime",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 63,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "reviews_updated_at": {
+        "id": "reviews_updated_at",
+        "tableId": "reviews",
+        "name": "updated_at",
+        "comment": "수정 일시",
+        "dataType": "datetime",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 67,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "collection_shares_id": {
+        "id": "collection_shares_id",
+        "tableId": "collection_shares",
+        "name": "id",
+        "comment": "PK",
+        "dataType": "bigint",
+        "default": "",
+        "options": 11,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "collection_shares_user_id": {
+        "id": "collection_shares_user_id",
+        "tableId": "collection_shares",
+        "name": "user_id",
+        "comment": "FK users.id",
+        "dataType": "bigint",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 60,
+          "widthComment": 65,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "collection_shares_share_token": {
+        "id": "collection_shares_share_token",
+        "tableId": "collection_shares",
+        "name": "share_token",
+        "comment": "공유 토큰, UK",
+        "dataType": "varchar(100)",
+        "default": "",
+        "options": 12,
+        "ui": {
+          "keys": 0,
+          "widthName": 71,
+          "widthComment": 71,
+          "widthDataType": 74,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "collection_shares_share_url": {
+        "id": "collection_shares_share_url",
+        "tableId": "collection_shares",
+        "name": "share_url",
+        "comment": "공유 링크 URL",
+        "dataType": "varchar(500)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 74,
+          "widthDataType": 76,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "collection_shares_is_public": {
+        "id": "collection_shares_is_public",
+        "tableId": "collection_shares",
+        "name": "is_public",
+        "comment": "공유 공개 여부",
+        "dataType": "boolean",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 71,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "collection_shares_created_at": {
+        "id": "collection_shares_created_at",
+        "tableId": "collection_shares",
+        "name": "created_at",
+        "comment": "생성 일시",
+        "dataType": "datetime",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 63,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "collection_shares_updated_at": {
+        "id": "collection_shares_updated_at",
+        "tableId": "collection_shares",
+        "name": "updated_at",
+        "comment": "수정 일시",
+        "dataType": "datetime",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 67,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "achievements_id": {
+        "id": "achievements_id",
+        "tableId": "achievements",
+        "name": "id",
+        "comment": "PK",
+        "dataType": "bigint",
+        "default": "",
+        "options": 11,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "achievements_title": {
+        "id": "achievements_title",
+        "tableId": "achievements",
+        "name": "title",
+        "comment": "도전과제명",
+        "dataType": "varchar(100)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 96,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "achievements_description": {
+        "id": "achievements_description",
+        "tableId": "achievements",
+        "name": "description",
+        "comment": "도전과제 설명",
+        "dataType": "text",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 88,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "achievements_icon": {
+        "id": "achievements_icon",
+        "tableId": "achievements",
+        "name": "icon",
+        "comment": "아이콘 키",
+        "dataType": "varchar(50)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 88,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "achievements_condition_type": {
+        "id": "achievements_condition_type",
+        "tableId": "achievements",
+        "name": "condition_type",
+        "comment": "category/region_any/difficulty/count_total",
+        "dataType": "varchar(30)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 112,
+          "widthComment": 180,
+          "widthDataType": 88,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "achievements_condition_value": {
+        "id": "achievements_condition_value",
+        "tableId": "achievements",
+        "name": "condition_value",
+        "comment": "조건 값",
+        "dataType": "varchar(255)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 120,
+          "widthComment": 60,
+          "widthDataType": 96,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "achievements_condition_total": {
+        "id": "achievements_condition_total",
+        "tableId": "achievements",
+        "name": "condition_total",
+        "comment": "필요 완료 수",
+        "dataType": "int",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 120,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "achievements_created_at": {
+        "id": "achievements_created_at",
+        "tableId": "achievements",
+        "name": "created_at",
+        "comment": "등록 일시",
+        "dataType": "datetime",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 80,
+          "widthComment": 60,
+          "widthDataType": 64,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "achievements_updated_at": {
+        "id": "achievements_updated_at",
+        "tableId": "achievements",
+        "name": "updated_at",
+        "comment": "수정 일시",
+        "dataType": "datetime",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 80,
+          "widthComment": 60,
+          "widthDataType": 64,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "user_passport_stats_user_id": {
+        "id": "user_passport_stats_user_id",
+        "tableId": "user_passport_stats",
+        "name": "user_id",
+        "comment": "PK/FK users.id",
+        "dataType": "bigint",
+        "default": "",
+        "options": 11,
+        "ui": {
+          "keys": 3,
+          "widthName": 60,
+          "widthComment": 112,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "user_passport_stats_stamp_count": {
+        "id": "user_passport_stats_stamp_count",
+        "tableId": "user_passport_stats",
+        "name": "stamp_count",
+        "comment": "수집한 스탬프 수",
+        "dataType": "int",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 88,
+          "widthComment": 72,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "user_passport_stats_unlocked_achievement_count": {
+        "id": "user_passport_stats_unlocked_achievement_count",
+        "tableId": "user_passport_stats",
+        "name": "unlocked_achievement_count",
+        "comment": "달성한 도전과제 수",
+        "dataType": "int",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 130,
+          "widthComment": 80,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "user_passport_stats_updated_at": {
+        "id": "user_passport_stats_updated_at",
+        "tableId": "user_passport_stats",
+        "name": "updated_at",
+        "comment": "마지막 계산 일시",
+        "dataType": "datetime",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 80,
+          "widthComment": 72,
+          "widthDataType": 64,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      }
+    },
+    "relationshipEntities": {
+      "r_users_favorites": {
+        "id": "r_users_favorites",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "users",
+          "columnIds": [
+            "users_id"
+          ],
+          "x": 437,
+          "y": 304,
+          "direction": 8
+        },
+        "end": {
+          "tableId": "favorites",
+          "columnIds": [
+            "favorites_user_id"
+          ],
+          "x": 716.8182,
+          "y": 925.5454,
+          "direction": 1
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "r_contents_favorites": {
+        "id": "r_contents_favorites",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "contents",
+          "columnIds": [
+            "contents_id"
+          ],
+          "x": 1441.3636,
+          "y": 919.0909,
+          "direction": 1
+        },
+        "end": {
+          "tableId": "favorites",
+          "columnIds": [
+            "favorites_content_id"
+          ],
+          "x": 1161.8182000000002,
+          "y": 925.5454,
+          "direction": 2
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "r_contents_missions": {
+        "id": "r_contents_missions",
+        "identification": false,
+        "relationshipType": 8,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "contents",
+          "columnIds": [
+            "contents_id"
+          ],
+          "x": 1800.6136,
+          "y": 589.0909,
+          "direction": 4
+        },
+        "end": {
+          "tableId": "missions",
+          "columnIds": [
+            "missions_content_id"
+          ],
+          "x": 1667.0909,
+          "y": 320.90909999999997,
+          "direction": 8
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "r_users_mission_completions": {
+        "id": "r_users_mission_completions",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "users",
+          "columnIds": [
+            "users_id"
+          ],
+          "x": 556,
+          "y": 136,
+          "direction": 2
+        },
+        "end": {
+          "tableId": "mission_completions",
+          "columnIds": [
+            "mission_completions_user_id"
+          ],
+          "x": 767.6136,
+          "y": 180.0682,
+          "direction": 1
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "r_missions_mission_completions": {
+        "id": "r_missions_mission_completions",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "missions",
+          "columnIds": [
+            "missions_id"
+          ],
+          "x": 1424.0909,
+          "y": 220.9091,
+          "direction": 1
+        },
+        "end": {
+          "tableId": "mission_completions",
+          "columnIds": [
+            "mission_completions_mission_id"
+          ],
+          "x": 1259.6136000000001,
+          "y": 124.0682,
+          "direction": 2
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "r_contents_mission_completions": {
+        "id": "r_contents_mission_completions",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "contents",
+          "columnIds": [
+            "contents_id"
+          ],
+          "x": 1561.1136,
+          "y": 589.0909,
+          "direction": 4
+        },
+        "end": {
+          "tableId": "mission_completions",
+          "columnIds": [
+            "mission_completions_content_id"
+          ],
+          "x": 1259.6136000000001,
+          "y": 236.0682,
+          "direction": 2
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "r_users_reviews": {
+        "id": "r_users_reviews",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "users",
+          "columnIds": [
+            "users_id"
+          ],
+          "x": 556,
+          "y": 248,
+          "direction": 2
+        },
+        "end": {
+          "tableId": "reviews",
+          "columnIds": [
+            "reviews_user_id"
+          ],
+          "x": 757.5,
+          "y": 504.7273,
+          "direction": 1
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "r_contents_reviews": {
+        "id": "r_contents_reviews",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "contents",
+          "columnIds": [
+            "contents_id"
+          ],
+          "x": 1441.3636,
+          "y": 699.0909,
+          "direction": 1
+        },
+        "end": {
+          "tableId": "reviews",
+          "columnIds": [
+            "reviews_content_id"
+          ],
+          "x": 1206.5,
+          "y": 504.7273,
+          "direction": 2
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "r_users_collection_shares": {
+        "id": "r_users_collection_shares",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "users",
+          "columnIds": [
+            "users_id"
+          ],
+          "x": 199,
+          "y": 304,
+          "direction": 8
+        },
+        "end": {
+          "tableId": "collection_shares",
+          "columnIds": [
+            "collection_shares_user_id"
+          ],
+          "x": 309.5,
+          "y": 820,
+          "direction": 4
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "r_users_user_passport_stats": {
+        "id": "r_users_user_passport_stats",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "users",
+          "columnIds": [
+            "users_id"
+          ],
+          "x": 260,
+          "y": 304,
+          "direction": 4
+        },
+        "end": {
+          "tableId": "user_passport_stats",
+          "columnIds": [
+            "user_passport_stats_user_id"
+          ],
+          "x": 260,
+          "y": 520,
+          "direction": 1
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      }
+    },
+    "indexEntities": {},
+    "indexColumnEntities": {},
+    "memoEntities": {}
+  }
+}
