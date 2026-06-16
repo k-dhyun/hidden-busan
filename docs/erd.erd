@@ -4,9 +4,9 @@
   "settings": {
     "width": 2600,
     "height": 2000,
-    "scrollTop": -495.7948,
-    "scrollLeft": -645.2886,
-    "zoomLevel": 0.52,
+    "scrollTop": -657,
+    "scrollLeft": -867,
+    "zoomLevel": 0.76,
     "show": 511,
     "database": 1,
     "databaseName": "hidden_busan",
@@ -32,26 +32,29 @@
   "doc": {
     "tableIds": [
       "users",
-      "contents",
+      "places",
       "missions",
       "favorites",
       "mission_completions",
       "reviews",
       "collection_shares",
       "achievements",
+      "user_achievements",
       "user_passport_stats"
     ],
     "relationshipIds": [
       "r_users_favorites",
-      "r_contents_favorites",
-      "r_contents_missions",
+      "r_places_favorites",
+      "r_places_missions",
       "r_users_mission_completions",
       "r_missions_mission_completions",
-      "r_contents_mission_completions",
+      "r_achievements_mission_completions",
       "r_users_reviews",
-      "r_contents_reviews",
+      "r_places_reviews",
       "r_users_collection_shares",
-      "r_users_user_passport_stats"
+      "r_users_user_passport_stats",
+      "r_achievements_user_achievements",
+      "r_users_user_achievements"
     ],
     "indexIds": [],
     "memoIds": []
@@ -81,68 +84,15 @@
           "users_updated_at"
         ],
         "ui": {
-          "x": 80,
-          "y": 80,
+          "x": 124.2307,
+          "y": 316.5384,
           "zIndex": 1,
           "widthName": 60,
           "widthComment": 142,
           "color": "#ECEBFF"
         },
         "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "contents": {
-        "id": "contents",
-        "name": "contents",
-        "comment": "지도/장소 카드 콘텐츠",
-        "columnIds": [
-          "contents_id",
-          "contents_name",
-          "contents_region",
-          "contents_category",
-          "contents_difficulty",
-          "contents_description",
-          "contents_address",
-          "contents_image_url",
-          "contents_duration",
-          "contents_best_time",
-          "contents_latitude",
-          "contents_longitude",
-          "contents_map_x",
-          "contents_map_y",
-          "contents_created_at",
-          "contents_updated_at"
-        ],
-        "seqColumnIds": [
-          "contents_id",
-          "contents_name",
-          "contents_region",
-          "contents_category",
-          "contents_difficulty",
-          "contents_description",
-          "contents_address",
-          "contents_image_url",
-          "contents_duration",
-          "contents_best_time",
-          "contents_latitude",
-          "contents_longitude",
-          "contents_map_x",
-          "contents_map_y",
-          "contents_created_at",
-          "contents_updated_at"
-        ],
-        "ui": {
-          "x": 1441.3636,
-          "y": 589.0909,
-          "zIndex": 1,
-          "widthName": 60,
-          "widthComment": 106,
-          "color": "#E7F3FF"
-        },
-        "meta": {
-          "updateAt": 1781522839386,
+          "updateAt": 1781625048222,
           "createAt": 1781107200000
         }
       },
@@ -152,7 +102,7 @@
         "comment": "장소별 도전 미션",
         "columnIds": [
           "missions_id",
-          "missions_content_id",
+          "missions_place_id",
           "missions_title",
           "missions_description",
           "missions_created_at",
@@ -160,22 +110,22 @@
         ],
         "seqColumnIds": [
           "missions_id",
-          "missions_content_id",
+          "missions_place_id",
           "missions_title",
           "missions_description",
           "missions_created_at",
           "missions_updated_at"
         ],
         "ui": {
-          "x": 1424.0909,
-          "y": 120.9091,
+          "x": 1874.0909,
+          "y": 49.7553,
           "zIndex": 1,
           "widthName": 60,
           "widthComment": 81,
           "color": "#FFF7E8"
         },
         "meta": {
-          "updateAt": 1781522830355,
+          "updateAt": 1781625063058,
           "createAt": 1781107200000
         }
       },
@@ -186,25 +136,25 @@
         "columnIds": [
           "favorites_id",
           "favorites_user_id",
-          "favorites_content_id",
+          "favorites_place_id",
           "favorites_created_at"
         ],
         "seqColumnIds": [
           "favorites_id",
           "favorites_user_id",
-          "favorites_content_id",
+          "favorites_place_id",
           "favorites_created_at"
         ],
         "ui": {
-          "x": 716.8182,
-          "y": 849.5454,
+          "x": 897.0813,
+          "y": 735.5778,
           "zIndex": 1,
           "widthName": 60,
           "widthComment": 71,
           "color": "#FFECEC"
         },
         "meta": {
-          "updateAt": 1781522841417,
+          "updateAt": 1781625252709,
           "createAt": 1781107200000
         }
       },
@@ -216,8 +166,9 @@
           "mission_completions_id",
           "mission_completions_user_id",
           "mission_completions_mission_id",
-          "mission_completions_content_id",
+          "mission_completions_achievement_id",
           "mission_completions_photo_url",
+          "mission_completions_stamp_emoji",
           "mission_completions_memo",
           "mission_completions_completed_at"
         ],
@@ -225,8 +176,10 @@
           "mission_completions_id",
           "mission_completions_user_id",
           "mission_completions_mission_id",
-          "mission_completions_content_id",
+          "mission_completions_place_id",
+          "mission_completions_achievement_id",
           "mission_completions_photo_url",
+          "mission_completions_stamp_emoji",
           "mission_completions_memo",
           "mission_completions_completed_at"
         ],
@@ -239,7 +192,7 @@
           "color": "#F2E9FF"
         },
         "meta": {
-          "updateAt": 1781522836575,
+          "updateAt": 1781625982208,
           "createAt": 1781107200000
         }
       },
@@ -250,7 +203,7 @@
         "columnIds": [
           "reviews_id",
           "reviews_user_id",
-          "reviews_content_id",
+          "reviews_place_id",
           "reviews_rating",
           "reviews_comment",
           "reviews_created_at",
@@ -259,22 +212,22 @@
         "seqColumnIds": [
           "reviews_id",
           "reviews_user_id",
-          "reviews_content_id",
+          "reviews_place_id",
           "reviews_rating",
           "reviews_comment",
           "reviews_created_at",
           "reviews_updated_at"
         ],
         "ui": {
-          "x": 757.5,
-          "y": 392.7273,
+          "x": 899.6053,
+          "y": 440.0957,
           "zIndex": 1,
           "widthName": 60,
           "widthComment": 60,
           "color": "#E8FFF1"
         },
         "meta": {
-          "updateAt": 1781522836575,
+          "updateAt": 1781625249662,
           "createAt": 1781107200000
         }
       },
@@ -301,15 +254,15 @@
           "collection_shares_updated_at"
         ],
         "ui": {
-          "x": 80,
-          "y": 820,
+          "x": 58.8462,
+          "y": 1025.7692,
           "zIndex": 1,
           "widthName": 101,
           "widthComment": 92,
           "color": "#F6F6F6"
         },
         "meta": {
-          "updateAt": 1781107200000,
+          "updateAt": 1781625051008,
           "createAt": 1781107200000
         }
       },
@@ -340,15 +293,15 @@
           "achievements_updated_at"
         ],
         "ui": {
-          "x": 1440,
-          "y": 1040,
+          "x": 1544.757,
+          "y": 1026.8421,
           "zIndex": 8,
-          "widthName": 96,
-          "widthComment": 128,
+          "widthName": 80,
+          "widthComment": 147,
           "color": "#FFF4DE"
         },
         "meta": {
-          "updateAt": 1781107200000,
+          "updateAt": 1781625190765,
           "createAt": 1781107200000
         }
       },
@@ -369,15 +322,130 @@
           "user_passport_stats_updated_at"
         ],
         "ui": {
-          "x": 80,
-          "y": 520,
+          "x": 70.3846,
+          "y": 37.3077,
           "zIndex": 9,
-          "widthName": 150,
-          "widthComment": 104,
+          "widthName": 118,
+          "widthComment": 116,
           "color": "#E2F5FF"
         },
         "meta": {
-          "updateAt": 1781107200000,
+          "updateAt": 1781625047159,
+          "createAt": 1781107200000
+        }
+      },
+      "user_achievements": {
+        "id": "user_achievements",
+        "name": "user_achievements",
+        "comment": "사용자별 달성 업적 기록",
+        "columnIds": [
+          "user_achievements_id",
+          "user_achievements_user_id",
+          "user_achievements_achievement_id",
+          "user_achievements_unlocked_at"
+        ],
+        "seqColumnIds": [
+          "user_achievements_id",
+          "user_achievements_user_id",
+          "user_achievements_achievement_id",
+          "user_achievements_unlocked_at"
+        ],
+        "ui": {
+          "x": 705.2835,
+          "y": 1077.5911,
+          "zIndex": 11,
+          "widthName": 111,
+          "widthComment": 116,
+          "color": "#FFF0F6"
+        },
+        "meta": {
+          "updateAt": 1781625193715,
+          "createAt": 1781107200000
+        }
+      },
+      "districts": {
+        "id": "districts",
+        "name": "districts",
+        "comment": "부산 구/군 기준 데이터",
+        "columnIds": [
+          "districts_id",
+          "districts_code",
+          "districts_name",
+          "districts_map_label_x",
+          "districts_map_label_y",
+          "districts_created_at",
+          "districts_updated_at"
+        ],
+        "seqColumnIds": [
+          "districts_id",
+          "districts_code",
+          "districts_name",
+          "districts_map_label_x",
+          "districts_map_label_y",
+          "districts_created_at",
+          "districts_updated_at"
+        ],
+        "ui": {
+          "x": 1937.6923,
+          "y": 328.0769,
+          "zIndex": 1,
+          "widthName": 60,
+          "widthComment": 109,
+          "color": "#E8FFF1"
+        },
+        "meta": {
+          "updateAt": 1781625067363,
+          "createAt": 1781107200000
+        }
+      },
+      "places": {
+        "id": "places",
+        "name": "places",
+        "comment": "지도/장소 카드 장소",
+        "columnIds": [
+          "places_id",
+          "places_district_id",
+          "places_name",
+          "places_category",
+          "places_difficulty",
+          "places_description",
+          "places_address",
+          "places_image_url",
+          "places_duration",
+          "places_best_time",
+          "places_latitude",
+          "places_longitude",
+          "places_created_at",
+          "places_updated_at"
+        ],
+        "seqColumnIds": [
+          "places_id",
+          "places_district_id",
+          "places_name",
+          "places_category",
+          "places_difficulty",
+          "places_description",
+          "places_address",
+          "places_image_url",
+          "places_duration",
+          "places_best_time",
+          "places_latitude",
+          "places_longitude",
+          "places_map_x",
+          "places_map_y",
+          "places_created_at",
+          "places_updated_at"
+        ],
+        "ui": {
+          "x": 1871.1206,
+          "y": 360.9534,
+          "zIndex": 1,
+          "widthName": 60,
+          "widthComment": 95,
+          "color": "#E7F3FF"
+        },
+        "meta": {
+          "updateAt": 1781625994526,
           "createAt": 1781107200000
         }
       }
@@ -523,326 +591,6 @@
           "createAt": 1781107200000
         }
       },
-      "contents_id": {
-        "id": "contents_id",
-        "tableId": "contents",
-        "name": "id",
-        "comment": "PK",
-        "dataType": "bigint",
-        "default": "",
-        "options": 11,
-        "ui": {
-          "keys": 1,
-          "widthName": 60,
-          "widthComment": 60,
-          "widthDataType": 60,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "contents_name": {
-        "id": "contents_name",
-        "tableId": "contents",
-        "name": "name",
-        "comment": "장소 이름",
-        "dataType": "varchar(100)",
-        "default": "",
-        "options": 8,
-        "ui": {
-          "keys": 0,
-          "widthName": 60,
-          "widthComment": 60,
-          "widthDataType": 74,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "contents_region": {
-        "id": "contents_region",
-        "tableId": "contents",
-        "name": "region",
-        "comment": "지역",
-        "dataType": "varchar(50)",
-        "default": "",
-        "options": 8,
-        "ui": {
-          "keys": 0,
-          "widthName": 60,
-          "widthComment": 60,
-          "widthDataType": 68,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "contents_category": {
-        "id": "contents_category",
-        "tableId": "contents",
-        "name": "category",
-        "comment": "명소/축제/쇼핑/시장",
-        "dataType": "varchar(20)",
-        "default": "",
-        "options": 8,
-        "ui": {
-          "keys": 0,
-          "widthName": 60,
-          "widthComment": 96,
-          "widthDataType": 68,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "contents_difficulty": {
-        "id": "contents_difficulty",
-        "tableId": "contents",
-        "name": "difficulty",
-        "comment": "쉬움/보통/어려움",
-        "dataType": "varchar(20)",
-        "default": "",
-        "options": 8,
-        "ui": {
-          "keys": 0,
-          "widthName": 60,
-          "widthComment": 82,
-          "widthDataType": 68,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "contents_description": {
-        "id": "contents_description",
-        "tableId": "contents",
-        "name": "description",
-        "comment": "장소 설명",
-        "dataType": "text",
-        "default": "",
-        "options": 8,
-        "ui": {
-          "keys": 0,
-          "widthName": 65,
-          "widthComment": 60,
-          "widthDataType": 60,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "contents_address": {
-        "id": "contents_address",
-        "tableId": "contents",
-        "name": "address",
-        "comment": "주소",
-        "dataType": "varchar(255)",
-        "default": "",
-        "options": 8,
-        "ui": {
-          "keys": 0,
-          "widthName": 60,
-          "widthComment": 60,
-          "widthDataType": 75,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "contents_image_url": {
-        "id": "contents_image_url",
-        "tableId": "contents",
-        "name": "image_url",
-        "comment": "대표 이미지 URL",
-        "dataType": "varchar(500)",
-        "default": "",
-        "options": 8,
-        "ui": {
-          "keys": 0,
-          "widthName": 60,
-          "widthComment": 84,
-          "widthDataType": 76,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "contents_duration": {
-        "id": "contents_duration",
-        "tableId": "contents",
-        "name": "duration",
-        "comment": "예상 소요 시간",
-        "dataType": "varchar(50)",
-        "default": "",
-        "options": 8,
-        "ui": {
-          "keys": 0,
-          "widthName": 60,
-          "widthComment": 71,
-          "widthDataType": 68,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "contents_best_time": {
-        "id": "contents_best_time",
-        "tableId": "contents",
-        "name": "best_time",
-        "comment": "추천 방문 시간",
-        "dataType": "varchar(100)",
-        "default": "",
-        "options": 8,
-        "ui": {
-          "keys": 0,
-          "widthName": 60,
-          "widthComment": 71,
-          "widthDataType": 74,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "contents_latitude": {
-        "id": "contents_latitude",
-        "tableId": "contents",
-        "name": "latitude",
-        "comment": "실제 지도 위도",
-        "dataType": "decimal(10,7)",
-        "default": "",
-        "options": 8,
-        "ui": {
-          "keys": 0,
-          "widthName": 60,
-          "widthComment": 71,
-          "widthDataType": 78,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "contents_longitude": {
-        "id": "contents_longitude",
-        "tableId": "contents",
-        "name": "longitude",
-        "comment": "실제 지도 경도",
-        "dataType": "decimal(10,7)",
-        "default": "",
-        "options": 8,
-        "ui": {
-          "keys": 0,
-          "widthName": 60,
-          "widthComment": 71,
-          "widthDataType": 78,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "contents_map_x": {
-        "id": "contents_map_x",
-        "tableId": "contents",
-        "name": "map_x",
-        "comment": "SVG 지도 X 좌표",
-        "dataType": "int",
-        "default": "",
-        "options": 8,
-        "ui": {
-          "keys": 0,
-          "widthName": 60,
-          "widthComment": 86,
-          "widthDataType": 60,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "contents_map_y": {
-        "id": "contents_map_y",
-        "tableId": "contents",
-        "name": "map_y",
-        "comment": "SVG 지도 Y 좌표",
-        "dataType": "int",
-        "default": "",
-        "options": 8,
-        "ui": {
-          "keys": 0,
-          "widthName": 60,
-          "widthComment": 86,
-          "widthDataType": 60,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "contents_created_at": {
-        "id": "contents_created_at",
-        "tableId": "contents",
-        "name": "created_at",
-        "comment": "등록 일시",
-        "dataType": "datetime",
-        "default": "",
-        "options": 8,
-        "ui": {
-          "keys": 0,
-          "widthName": 63,
-          "widthComment": 60,
-          "widthDataType": 60,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "contents_updated_at": {
-        "id": "contents_updated_at",
-        "tableId": "contents",
-        "name": "updated_at",
-        "comment": "수정 일시",
-        "dataType": "datetime",
-        "default": "",
-        "options": 8,
-        "ui": {
-          "keys": 0,
-          "widthName": 67,
-          "widthComment": 60,
-          "widthDataType": 60,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
       "missions_id": {
         "id": "missions_id",
         "tableId": "missions",
@@ -855,26 +603,6 @@
           "keys": 1,
           "widthName": 60,
           "widthComment": 60,
-          "widthDataType": 60,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "missions_content_id": {
-        "id": "missions_content_id",
-        "tableId": "missions",
-        "name": "content_id",
-        "comment": "FK contents.id, UK",
-        "dataType": "bigint",
-        "default": "",
-        "options": 12,
-        "ui": {
-          "keys": 2,
-          "widthName": 63,
-          "widthComment": 107,
           "widthDataType": 60,
           "widthDefault": 60
         },
@@ -1003,26 +731,6 @@
           "createAt": 1781107200000
         }
       },
-      "favorites_content_id": {
-        "id": "favorites_content_id",
-        "tableId": "favorites",
-        "name": "content_id",
-        "comment": "FK contents.id",
-        "dataType": "bigint",
-        "default": "",
-        "options": 8,
-        "ui": {
-          "keys": 2,
-          "widthName": 63,
-          "widthComment": 84,
-          "widthDataType": 60,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
       "favorites_created_at": {
         "id": "favorites_created_at",
         "tableId": "favorites",
@@ -1103,38 +811,18 @@
           "createAt": 1781107200000
         }
       },
-      "mission_completions_content_id": {
-        "id": "mission_completions_content_id",
-        "tableId": "mission_completions",
-        "name": "content_id",
-        "comment": "FK contents.id",
-        "dataType": "bigint",
-        "default": "",
-        "options": 8,
-        "ui": {
-          "keys": 2,
-          "widthName": 63,
-          "widthComment": 84,
-          "widthDataType": 60,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
       "mission_completions_photo_url": {
         "id": "mission_completions_photo_url",
         "tableId": "mission_completions",
         "name": "photo_url",
-        "comment": "미션 완료 사진 URL",
+        "comment": "인증 사진 경로/URL (DTO photoUrl)",
         "dataType": "varchar(500)",
         "default": "",
         "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 60,
-          "widthComment": 98,
+          "widthComment": 188,
           "widthDataType": 76,
           "widthDefault": 60
         },
@@ -1215,26 +903,6 @@
           "keys": 2,
           "widthName": 60,
           "widthComment": 65,
-          "widthDataType": 60,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "reviews_content_id": {
-        "id": "reviews_content_id",
-        "tableId": "reviews",
-        "name": "content_id",
-        "comment": "FK contents.id",
-        "dataType": "bigint",
-        "default": "",
-        "options": 8,
-        "ui": {
-          "keys": 2,
-          "widthName": 63,
-          "widthComment": 84,
           "widthDataType": 60,
           "widthDefault": 60
         },
@@ -1495,7 +1163,7 @@
           "keys": 0,
           "widthName": 60,
           "widthComment": 60,
-          "widthDataType": 96,
+          "widthDataType": 74,
           "widthDefault": 60
         },
         "meta": {
@@ -1513,8 +1181,8 @@
         "options": 8,
         "ui": {
           "keys": 0,
-          "widthName": 88,
-          "widthComment": 60,
+          "widthName": 65,
+          "widthComment": 68,
           "widthDataType": 60,
           "widthDefault": 60
         },
@@ -1526,20 +1194,20 @@
       "achievements_icon": {
         "id": "achievements_icon",
         "tableId": "achievements",
-        "name": "icon",
-        "comment": "아이콘 키",
+        "name": "emogi",
+        "comment": "도전과제 이모지",
         "dataType": "varchar(50)",
         "default": "",
         "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 60,
-          "widthComment": 60,
-          "widthDataType": 88,
+          "widthComment": 78,
+          "widthDataType": 68,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1781107200000,
+          "updateAt": 1781626277434,
           "createAt": 1781107200000
         }
       },
@@ -1553,9 +1221,9 @@
         "options": 8,
         "ui": {
           "keys": 0,
-          "widthName": 112,
-          "widthComment": 180,
-          "widthDataType": 88,
+          "widthName": 87,
+          "widthComment": 238,
+          "widthDataType": 68,
           "widthDefault": 60
         },
         "meta": {
@@ -1573,9 +1241,9 @@
         "options": 8,
         "ui": {
           "keys": 0,
-          "widthName": 120,
+          "widthName": 91,
           "widthComment": 60,
-          "widthDataType": 96,
+          "widthDataType": 75,
           "widthDefault": 60
         },
         "meta": {
@@ -1593,8 +1261,8 @@
         "options": 0,
         "ui": {
           "keys": 0,
-          "widthName": 120,
-          "widthComment": 60,
+          "widthName": 87,
+          "widthComment": 61,
           "widthDataType": 60,
           "widthDefault": 60
         },
@@ -1613,9 +1281,9 @@
         "options": 8,
         "ui": {
           "keys": 0,
-          "widthName": 80,
+          "widthName": 63,
           "widthComment": 60,
-          "widthDataType": 64,
+          "widthDataType": 60,
           "widthDefault": 60
         },
         "meta": {
@@ -1633,9 +1301,9 @@
         "options": 8,
         "ui": {
           "keys": 0,
-          "widthName": 80,
+          "widthName": 67,
           "widthComment": 60,
-          "widthDataType": 64,
+          "widthDataType": 60,
           "widthDefault": 60
         },
         "meta": {
@@ -1654,7 +1322,7 @@
         "ui": {
           "keys": 3,
           "widthName": 60,
-          "widthComment": 112,
+          "widthComment": 84,
           "widthDataType": 60,
           "widthDefault": 60
         },
@@ -1673,8 +1341,8 @@
         "options": 8,
         "ui": {
           "keys": 0,
-          "widthName": 88,
-          "widthComment": 72,
+          "widthName": 75,
+          "widthComment": 81,
           "widthDataType": 60,
           "widthDefault": 60
         },
@@ -1693,8 +1361,8 @@
         "options": 8,
         "ui": {
           "keys": 0,
-          "widthName": 130,
-          "widthComment": 80,
+          "widthName": 171,
+          "widthComment": 92,
           "widthDataType": 60,
           "widthDefault": 60
         },
@@ -1713,9 +1381,669 @@
         "options": 8,
         "ui": {
           "keys": 0,
-          "widthName": 80,
-          "widthComment": 72,
-          "widthDataType": 64,
+          "widthName": 67,
+          "widthComment": 81,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "user_achievements_id": {
+        "id": "user_achievements_id",
+        "tableId": "user_achievements",
+        "name": "id",
+        "comment": "PK",
+        "dataType": "bigint",
+        "default": "",
+        "options": 11,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "user_achievements_user_id": {
+        "id": "user_achievements_user_id",
+        "tableId": "user_achievements",
+        "name": "user_id",
+        "comment": "FK users.id",
+        "dataType": "bigint",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 60,
+          "widthComment": 65,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "user_achievements_achievement_id": {
+        "id": "user_achievements_achievement_id",
+        "tableId": "user_achievements",
+        "name": "achievement_id",
+        "comment": "FK achievements.id",
+        "dataType": "bigint",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 91,
+          "widthComment": 112,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "user_achievements_unlocked_at": {
+        "id": "user_achievements_unlocked_at",
+        "tableId": "user_achievements",
+        "name": "unlocked_at",
+        "comment": "달성 일시",
+        "dataType": "datetime",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 71,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "districts_id": {
+        "id": "districts_id",
+        "tableId": "districts",
+        "name": "id",
+        "comment": "PK",
+        "dataType": "bigint",
+        "default": "",
+        "options": 11,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "districts_code": {
+        "id": "districts_code",
+        "tableId": "districts",
+        "name": "code",
+        "comment": "UK",
+        "dataType": "varchar(50)",
+        "default": "",
+        "options": 12,
+        "ui": {
+          "keys": 4,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 68,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "districts_name": {
+        "id": "districts_name",
+        "tableId": "districts",
+        "name": "name",
+        "comment": "UK",
+        "dataType": "varchar(50)",
+        "default": "",
+        "options": 12,
+        "ui": {
+          "keys": 4,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 68,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "districts_map_label_x": {
+        "id": "districts_map_label_x",
+        "tableId": "districts",
+        "name": "map_label_x",
+        "comment": "지도 라벨 X 비율",
+        "dataType": "decimal(8,4)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 73,
+          "widthComment": 83,
+          "widthDataType": 73,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "districts_map_label_y": {
+        "id": "districts_map_label_y",
+        "tableId": "districts",
+        "name": "map_label_y",
+        "comment": "지도 라벨 Y 비율",
+        "dataType": "decimal(8,4)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 74,
+          "widthComment": 82,
+          "widthDataType": 73,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "districts_created_at": {
+        "id": "districts_created_at",
+        "tableId": "districts",
+        "name": "created_at",
+        "comment": "생성 시각",
+        "dataType": "datetime",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 63,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "districts_updated_at": {
+        "id": "districts_updated_at",
+        "tableId": "districts",
+        "name": "updated_at",
+        "comment": "수정 시각",
+        "dataType": "datetime",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 67,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "places_id": {
+        "id": "places_id",
+        "tableId": "places",
+        "name": "id",
+        "comment": "PK",
+        "dataType": "bigint",
+        "default": "",
+        "options": 11,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "places_district_id": {
+        "id": "places_district_id",
+        "tableId": "places",
+        "name": "district_id",
+        "comment": "FK districts.id",
+        "dataType": "bigint",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 80,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "places_name": {
+        "id": "places_name",
+        "tableId": "places",
+        "name": "name",
+        "comment": "장소 이름",
+        "dataType": "varchar(100)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 74,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "places_category": {
+        "id": "places_category",
+        "tableId": "places",
+        "name": "category",
+        "comment": "명소/축제/쇼핑/시장",
+        "dataType": "varchar(20)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 96,
+          "widthDataType": 68,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "places_difficulty": {
+        "id": "places_difficulty",
+        "tableId": "places",
+        "name": "difficulty",
+        "comment": "쉬움/보통/어려움",
+        "dataType": "varchar(20)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 82,
+          "widthDataType": 68,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "places_description": {
+        "id": "places_description",
+        "tableId": "places",
+        "name": "description",
+        "comment": "장소 설명",
+        "dataType": "text",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 65,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "places_address": {
+        "id": "places_address",
+        "tableId": "places",
+        "name": "address",
+        "comment": "주소",
+        "dataType": "varchar(255)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 75,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "places_image_url": {
+        "id": "places_image_url",
+        "tableId": "places",
+        "name": "image_url",
+        "comment": "대표 이미지 URL",
+        "dataType": "varchar(500)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 84,
+          "widthDataType": 76,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "places_duration": {
+        "id": "places_duration",
+        "tableId": "places",
+        "name": "duration",
+        "comment": "예상 소요 시간",
+        "dataType": "varchar(50)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 71,
+          "widthDataType": 68,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "places_best_time": {
+        "id": "places_best_time",
+        "tableId": "places",
+        "name": "best_time",
+        "comment": "추천 방문 시간",
+        "dataType": "varchar(100)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 71,
+          "widthDataType": 74,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "places_latitude": {
+        "id": "places_latitude",
+        "tableId": "places",
+        "name": "latitude",
+        "comment": "실제 지도 위도",
+        "dataType": "decimal(10,7)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 71,
+          "widthDataType": 78,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "places_longitude": {
+        "id": "places_longitude",
+        "tableId": "places",
+        "name": "longitude",
+        "comment": "실제 지도 경도",
+        "dataType": "decimal(10,7)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 71,
+          "widthDataType": 78,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "places_map_x": {
+        "id": "places_map_x",
+        "tableId": "places",
+        "name": "map_x",
+        "comment": "SVG 지도 X 좌표",
+        "dataType": "int",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 86,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "places_map_y": {
+        "id": "places_map_y",
+        "tableId": "places",
+        "name": "map_y",
+        "comment": "SVG 지도 Y 좌표",
+        "dataType": "int",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 86,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "places_created_at": {
+        "id": "places_created_at",
+        "tableId": "places",
+        "name": "created_at",
+        "comment": "등록 일시",
+        "dataType": "datetime",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 63,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "places_updated_at": {
+        "id": "places_updated_at",
+        "tableId": "places",
+        "name": "updated_at",
+        "comment": "수정 일시",
+        "dataType": "datetime",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 67,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "missions_place_id": {
+        "id": "missions_place_id",
+        "tableId": "missions",
+        "name": "place_id",
+        "comment": "FK places.id, UK",
+        "dataType": "bigint",
+        "default": "",
+        "options": 12,
+        "ui": {
+          "keys": 2,
+          "widthName": 60,
+          "widthComment": 95,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "favorites_place_id": {
+        "id": "favorites_place_id",
+        "tableId": "favorites",
+        "name": "place_id",
+        "comment": "FK places.id",
+        "dataType": "bigint",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 60,
+          "widthComment": 71,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "mission_completions_place_id": {
+        "id": "mission_completions_place_id",
+        "tableId": "mission_completions",
+        "name": "place_id",
+        "comment": "FK places.id",
+        "dataType": "bigint",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 71,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "reviews_place_id": {
+        "id": "reviews_place_id",
+        "tableId": "reviews",
+        "name": "place_id",
+        "comment": "FK places.id",
+        "dataType": "bigint",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 60,
+          "widthComment": 71,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "mission_completions_achievement_id": {
+        "id": "mission_completions_achievement_id",
+        "tableId": "mission_completions",
+        "name": "achievement_id",
+        "comment": "FK achievements.id, nullable",
+        "dataType": "bigint",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 91,
+          "widthComment": 163,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "mission_completions_stamp_emoji": {
+        "id": "mission_completions_stamp_emoji",
+        "tableId": "mission_completions",
+        "name": "stamp_emoji",
+        "comment": "스탬프 이모지",
+        "dataType": "varchar(20)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 74,
+          "widthComment": 68,
+          "widthDataType": 68,
           "widthDefault": 60
         },
         "meta": {
@@ -1735,74 +2063,18 @@
           "columnIds": [
             "users_id"
           ],
-          "x": 437,
-          "y": 304,
-          "direction": 8
+          "x": 600.2307,
+          "y": 503.20506666666677,
+          "direction": 2
         },
         "end": {
           "tableId": "favorites",
           "columnIds": [
             "favorites_user_id"
           ],
-          "x": 716.8182,
-          "y": 925.5454,
+          "x": 897.0813,
+          "y": 811.5778,
           "direction": 1
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "r_contents_favorites": {
-        "id": "r_contents_favorites",
-        "identification": false,
-        "relationshipType": 16,
-        "startRelationshipType": 2,
-        "start": {
-          "tableId": "contents",
-          "columnIds": [
-            "contents_id"
-          ],
-          "x": 1441.3636,
-          "y": 919.0909,
-          "direction": 1
-        },
-        "end": {
-          "tableId": "favorites",
-          "columnIds": [
-            "favorites_content_id"
-          ],
-          "x": 1161.8182000000002,
-          "y": 925.5454,
-          "direction": 2
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "r_contents_missions": {
-        "id": "r_contents_missions",
-        "identification": false,
-        "relationshipType": 8,
-        "startRelationshipType": 2,
-        "start": {
-          "tableId": "contents",
-          "columnIds": [
-            "contents_id"
-          ],
-          "x": 1800.6136,
-          "y": 589.0909,
-          "direction": 4
-        },
-        "end": {
-          "tableId": "missions",
-          "columnIds": [
-            "missions_content_id"
-          ],
-          "x": 1667.0909,
-          "y": 320.90909999999997,
-          "direction": 8
         },
         "meta": {
           "updateAt": 1781107200000,
@@ -1819,8 +2091,8 @@
           "columnIds": [
             "users_id"
           ],
-          "x": 556,
-          "y": 136,
+          "x": 600.2307,
+          "y": 353.8717333333334,
           "direction": 2
         },
         "end": {
@@ -1829,7 +2101,7 @@
             "mission_completions_user_id"
           ],
           "x": 767.6136,
-          "y": 180.0682,
+          "y": 192.0682,
           "direction": 1
         },
         "meta": {
@@ -1847,8 +2119,8 @@
           "columnIds": [
             "missions_id"
           ],
-          "x": 1424.0909,
-          "y": 220.9091,
+          "x": 1874.0909,
+          "y": 149.7553,
           "direction": 1
         },
         "end": {
@@ -1856,36 +2128,8 @@
           "columnIds": [
             "mission_completions_mission_id"
           ],
-          "x": 1259.6136000000001,
-          "y": 124.0682,
-          "direction": 2
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "r_contents_mission_completions": {
-        "id": "r_contents_mission_completions",
-        "identification": false,
-        "relationshipType": 16,
-        "startRelationshipType": 2,
-        "start": {
-          "tableId": "contents",
-          "columnIds": [
-            "contents_id"
-          ],
-          "x": 1561.1136,
-          "y": 589.0909,
-          "direction": 4
-        },
-        "end": {
-          "tableId": "mission_completions",
-          "columnIds": [
-            "mission_completions_content_id"
-          ],
-          "x": 1259.6136000000001,
-          "y": 236.0682,
+          "x": 1352.6136000000001,
+          "y": 130.0682,
           "direction": 2
         },
         "meta": {
@@ -1903,8 +2147,8 @@
           "columnIds": [
             "users_id"
           ],
-          "x": 556,
-          "y": 248,
+          "x": 600.2307,
+          "y": 428.5384000000001,
           "direction": 2
         },
         "end": {
@@ -1912,37 +2156,9 @@
           "columnIds": [
             "reviews_user_id"
           ],
-          "x": 757.5,
-          "y": 504.7273,
+          "x": 899.6053,
+          "y": 552.0957000000001,
           "direction": 1
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "r_contents_reviews": {
-        "id": "r_contents_reviews",
-        "identification": false,
-        "relationshipType": 16,
-        "startRelationshipType": 2,
-        "start": {
-          "tableId": "contents",
-          "columnIds": [
-            "contents_id"
-          ],
-          "x": 1441.3636,
-          "y": 699.0909,
-          "direction": 1
-        },
-        "end": {
-          "tableId": "reviews",
-          "columnIds": [
-            "reviews_content_id"
-          ],
-          "x": 1206.5,
-          "y": 504.7273,
-          "direction": 2
         },
         "meta": {
           "updateAt": 1781107200000,
@@ -1959,8 +2175,8 @@
           "columnIds": [
             "users_id"
           ],
-          "x": 199,
-          "y": 304,
+          "x": 243.2307,
+          "y": 540.5384,
           "direction": 8
         },
         "end": {
@@ -1968,8 +2184,8 @@
           "columnIds": [
             "collection_shares_user_id"
           ],
-          "x": 309.5,
-          "y": 820,
+          "x": 288.3462,
+          "y": 1025.7692,
           "direction": 4
         },
         "meta": {
@@ -1979,6 +2195,34 @@
       },
       "r_users_user_passport_stats": {
         "id": "r_users_user_passport_stats",
+        "identification": true,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "users",
+          "columnIds": [
+            "users_id"
+          ],
+          "x": 362.2307,
+          "y": 316.5384,
+          "direction": 4
+        },
+        "end": {
+          "tableId": "user_passport_stats",
+          "columnIds": [
+            "user_passport_stats_user_id"
+          ],
+          "x": 350.8846,
+          "y": 189.3077,
+          "direction": 8
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "r_users_user_achievements": {
+        "id": "r_users_user_achievements",
         "identification": false,
         "relationshipType": 16,
         "startRelationshipType": 2,
@@ -1987,18 +2231,214 @@
           "columnIds": [
             "users_id"
           ],
-          "x": 260,
-          "y": 304,
+          "x": 481.2307,
+          "y": 540.5384,
+          "direction": 8
+        },
+        "end": {
+          "tableId": "user_achievements",
+          "columnIds": [
+            "user_achievements_user_id"
+          ],
+          "x": 705.2835,
+          "y": 1153.5911,
+          "direction": 1
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "r_achievements_user_achievements": {
+        "id": "r_achievements_user_achievements",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "achievements",
+          "columnIds": [
+            "achievements_id"
+          ],
+          "x": 1544.757,
+          "y": 1162.8421,
+          "direction": 1
+        },
+        "end": {
+          "tableId": "user_achievements",
+          "columnIds": [
+            "user_achievements_achievement_id"
+          ],
+          "x": 1206.2835,
+          "y": 1153.5911,
+          "direction": 2
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "r_places_missions": {
+        "id": "r_places_missions",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "places",
+          "columnIds": [
+            "places_id"
+          ],
+          "x": 2110.6206,
+          "y": 360.9534,
           "direction": 4
         },
         "end": {
-          "tableId": "user_passport_stats",
+          "tableId": "missions",
           "columnIds": [
-            "user_passport_stats_user_id"
+            "missions_place_id"
           ],
-          "x": 260,
-          "y": 520,
+          "x": 2111.0909,
+          "y": 249.7553,
+          "direction": 8
+        },
+        "meta": {
+          "updateAt": 1781626024440,
+          "createAt": 1781107200000
+        }
+      },
+      "r_places_favorites": {
+        "id": "r_places_favorites",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "places",
+          "columnIds": [
+            "places_id"
+          ],
+          "x": 1871.1206,
+          "y": 654.9534,
           "direction": 1
+        },
+        "end": {
+          "tableId": "favorites",
+          "columnIds": [
+            "favorites_place_id"
+          ],
+          "x": 1329.0813,
+          "y": 811.5778,
+          "direction": 2
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "r_places_mission_completions": {
+        "id": "r_places_mission_completions",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "places",
+          "columnIds": [
+            "places_id"
+          ],
+          "x": 1871.1206,
+          "y": 426.28673333333336,
+          "direction": 1
+        },
+        "end": {
+          "tableId": "mission_completions",
+          "columnIds": [
+            "mission_completions_place_id"
+          ],
+          "x": 1352.6136000000001,
+          "y": 204.0682,
+          "direction": 2
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "r_places_reviews": {
+        "id": "r_places_reviews",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "places",
+          "columnIds": [
+            "places_id"
+          ],
+          "x": 1871.1206,
+          "y": 458.9534,
+          "direction": 1
+        },
+        "end": {
+          "tableId": "reviews",
+          "columnIds": [
+            "reviews_place_id"
+          ],
+          "x": 1335.6053000000002,
+          "y": 552.0957000000001,
+          "direction": 2
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "r_districts_places": {
+        "id": "r_districts_places",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "districts",
+          "columnIds": [
+            "districts_id"
+          ],
+          "x": 2171.6922999999997,
+          "y": 552.0769,
+          "direction": 8
+        },
+        "end": {
+          "tableId": "places",
+          "columnIds": [
+            "places_district_id"
+          ],
+          "x": 2159.7609666666667,
+          "y": 708.3217,
+          "direction": 4
+        },
+        "meta": {
+          "updateAt": 1781107200000,
+          "createAt": 1781107200000
+        }
+      },
+      "r_achievements_mission_completions": {
+        "id": "r_achievements_mission_completions",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "achievements",
+          "columnIds": [
+            "achievements_id"
+          ],
+          "x": 1836.757,
+          "y": 1026.8421,
+          "direction": 4
+        },
+        "end": {
+          "tableId": "mission_completions",
+          "columnIds": [
+            "mission_completions_achievement_id"
+          ],
+          "x": 1352.6136000000001,
+          "y": 254.0682,
+          "direction": 2
         },
         "meta": {
           "updateAt": 1781107200000,
