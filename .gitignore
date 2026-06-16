@@ -1,0 +1,89 @@
+HELP.md
+
+### OS ###
+.DS_Store
+Thumbs.db
+
+### Logs ###
+*.log
+logs/
+
+### Runtime / Upload ###
+uploads/
+server/uploads/
+
+### Frontend cache / test ###
+client/.cache/
+client/coverage/
+client/*.tsbuildinfo
+client/tsconfig.*.tsbuildinfo
+
+### Vercel / Netlify ###
+.vercel/
+.netlify/
+
+### Gradle extra ###
+server/.gradle/
+server/build/
+server/out/
+
+### Java compiled files ###
+*.class
+
+### Local config ###
+server/src/main/resources/application-local.properties
+server/src/main/resources/application-local.yml
+server/src/main/resources/application-dev.properties
+server/src/main/resources/application-dev.yml
+
+### Client ###
+client/node_modules/
+client/dist/
+client/.vite/
+client/tsconfig.tsbuildinfo
+client/.env.local
+client/.env.*.local
+
+# Environment
+.env
+.env.*
+!client/.env.example
+!backend/.env.example
+
+### Gradle / Server ###
+server/.gradle/
+server/build/
+!server/gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
