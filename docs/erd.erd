@@ -176,7 +176,6 @@
           "mission_completions_id",
           "mission_completions_user_id",
           "mission_completions_mission_id",
-          "mission_completions_place_id",
           "mission_completions_achievement_id",
           "mission_completions_photo_url",
           "mission_completions_stamp_emoji",
@@ -363,48 +362,13 @@
           "createAt": 1781107200000
         }
       },
-      "districts": {
-        "id": "districts",
-        "name": "districts",
-        "comment": "부산 구/군 기준 데이터",
-        "columnIds": [
-          "districts_id",
-          "districts_code",
-          "districts_name",
-          "districts_map_label_x",
-          "districts_map_label_y",
-          "districts_created_at",
-          "districts_updated_at"
-        ],
-        "seqColumnIds": [
-          "districts_id",
-          "districts_code",
-          "districts_name",
-          "districts_map_label_x",
-          "districts_map_label_y",
-          "districts_created_at",
-          "districts_updated_at"
-        ],
-        "ui": {
-          "x": 1937.6923,
-          "y": 328.0769,
-          "zIndex": 1,
-          "widthName": 60,
-          "widthComment": 109,
-          "color": "#E8FFF1"
-        },
-        "meta": {
-          "updateAt": 1781625067363,
-          "createAt": 1781107200000
-        }
-      },
       "places": {
         "id": "places",
         "name": "places",
         "comment": "지도/장소 카드 장소",
         "columnIds": [
           "places_id",
-          "places_district_id",
+          "places_region",
           "places_name",
           "places_category",
           "places_difficulty",
@@ -420,7 +384,7 @@
         ],
         "seqColumnIds": [
           "places_id",
-          "places_district_id",
+          "places_region",
           "places_name",
           "places_category",
           "places_difficulty",
@@ -431,8 +395,6 @@
           "places_best_time",
           "places_latitude",
           "places_longitude",
-          "places_map_x",
-          "places_map_y",
           "places_created_at",
           "places_updated_at"
         ],
@@ -445,7 +407,7 @@
           "color": "#E7F3FF"
         },
         "meta": {
-          "updateAt": 1781625994526,
+          "updateAt": 1781626949994,
           "createAt": 1781107200000
         }
       }
@@ -1471,146 +1433,6 @@
           "createAt": 1781107200000
         }
       },
-      "districts_id": {
-        "id": "districts_id",
-        "tableId": "districts",
-        "name": "id",
-        "comment": "PK",
-        "dataType": "bigint",
-        "default": "",
-        "options": 11,
-        "ui": {
-          "keys": 1,
-          "widthName": 60,
-          "widthComment": 60,
-          "widthDataType": 60,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "districts_code": {
-        "id": "districts_code",
-        "tableId": "districts",
-        "name": "code",
-        "comment": "UK",
-        "dataType": "varchar(50)",
-        "default": "",
-        "options": 12,
-        "ui": {
-          "keys": 4,
-          "widthName": 60,
-          "widthComment": 60,
-          "widthDataType": 68,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "districts_name": {
-        "id": "districts_name",
-        "tableId": "districts",
-        "name": "name",
-        "comment": "UK",
-        "dataType": "varchar(50)",
-        "default": "",
-        "options": 12,
-        "ui": {
-          "keys": 4,
-          "widthName": 60,
-          "widthComment": 60,
-          "widthDataType": 68,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "districts_map_label_x": {
-        "id": "districts_map_label_x",
-        "tableId": "districts",
-        "name": "map_label_x",
-        "comment": "지도 라벨 X 비율",
-        "dataType": "decimal(8,4)",
-        "default": "",
-        "options": 8,
-        "ui": {
-          "keys": 0,
-          "widthName": 73,
-          "widthComment": 83,
-          "widthDataType": 73,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "districts_map_label_y": {
-        "id": "districts_map_label_y",
-        "tableId": "districts",
-        "name": "map_label_y",
-        "comment": "지도 라벨 Y 비율",
-        "dataType": "decimal(8,4)",
-        "default": "",
-        "options": 8,
-        "ui": {
-          "keys": 0,
-          "widthName": 74,
-          "widthComment": 82,
-          "widthDataType": 73,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "districts_created_at": {
-        "id": "districts_created_at",
-        "tableId": "districts",
-        "name": "created_at",
-        "comment": "생성 시각",
-        "dataType": "datetime",
-        "default": "",
-        "options": 8,
-        "ui": {
-          "keys": 0,
-          "widthName": 63,
-          "widthComment": 60,
-          "widthDataType": 60,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "districts_updated_at": {
-        "id": "districts_updated_at",
-        "tableId": "districts",
-        "name": "updated_at",
-        "comment": "수정 시각",
-        "dataType": "datetime",
-        "default": "",
-        "options": 8,
-        "ui": {
-          "keys": 0,
-          "widthName": 67,
-          "widthComment": 60,
-          "widthDataType": 60,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
       "places_id": {
         "id": "places_id",
         "tableId": "places",
@@ -1623,26 +1445,6 @@
           "keys": 1,
           "widthName": 60,
           "widthComment": 60,
-          "widthDataType": 60,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "places_district_id": {
-        "id": "places_district_id",
-        "tableId": "places",
-        "name": "district_id",
-        "comment": "FK districts.id",
-        "dataType": "bigint",
-        "default": "",
-        "options": 8,
-        "ui": {
-          "keys": 0,
-          "widthName": 60,
-          "widthComment": 80,
           "widthDataType": 60,
           "widthDefault": 60
         },
@@ -1851,46 +1653,6 @@
           "createAt": 1781107200000
         }
       },
-      "places_map_x": {
-        "id": "places_map_x",
-        "tableId": "places",
-        "name": "map_x",
-        "comment": "SVG 지도 X 좌표",
-        "dataType": "int",
-        "default": "",
-        "options": 8,
-        "ui": {
-          "keys": 0,
-          "widthName": 60,
-          "widthComment": 86,
-          "widthDataType": 60,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "places_map_y": {
-        "id": "places_map_y",
-        "tableId": "places",
-        "name": "map_y",
-        "comment": "SVG 지도 Y 좌표",
-        "dataType": "int",
-        "default": "",
-        "options": 8,
-        "ui": {
-          "keys": 0,
-          "widthName": 60,
-          "widthComment": 86,
-          "widthDataType": 60,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
       "places_created_at": {
         "id": "places_created_at",
         "tableId": "places",
@@ -1971,26 +1733,6 @@
           "createAt": 1781107200000
         }
       },
-      "mission_completions_place_id": {
-        "id": "mission_completions_place_id",
-        "tableId": "mission_completions",
-        "name": "place_id",
-        "comment": "FK places.id",
-        "dataType": "bigint",
-        "default": "",
-        "options": 8,
-        "ui": {
-          "keys": 0,
-          "widthName": 60,
-          "widthComment": 71,
-          "widthDataType": 60,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
       "reviews_place_id": {
         "id": "reviews_place_id",
         "tableId": "reviews",
@@ -2049,6 +1791,26 @@
         "meta": {
           "updateAt": 1781107200000,
           "createAt": 1781107200000
+        }
+      },
+      "places_region": {
+        "id": "places_region",
+        "tableId": "places",
+        "name": "region",
+        "comment": "부산 구/군 표시명",
+        "dataType": "varchar(50)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 94,
+          "widthDataType": 80,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1781626949994,
+          "createAt": 1781626949994
         }
       }
     },
@@ -2333,34 +2095,6 @@
           "createAt": 1781107200000
         }
       },
-      "r_places_mission_completions": {
-        "id": "r_places_mission_completions",
-        "identification": false,
-        "relationshipType": 16,
-        "startRelationshipType": 2,
-        "start": {
-          "tableId": "places",
-          "columnIds": [
-            "places_id"
-          ],
-          "x": 1871.1206,
-          "y": 426.28673333333336,
-          "direction": 1
-        },
-        "end": {
-          "tableId": "mission_completions",
-          "columnIds": [
-            "mission_completions_place_id"
-          ],
-          "x": 1352.6136000000001,
-          "y": 204.0682,
-          "direction": 2
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
       "r_places_reviews": {
         "id": "r_places_reviews",
         "identification": false,
@@ -2383,34 +2117,6 @@
           "x": 1335.6053000000002,
           "y": 552.0957000000001,
           "direction": 2
-        },
-        "meta": {
-          "updateAt": 1781107200000,
-          "createAt": 1781107200000
-        }
-      },
-      "r_districts_places": {
-        "id": "r_districts_places",
-        "identification": false,
-        "relationshipType": 16,
-        "startRelationshipType": 2,
-        "start": {
-          "tableId": "districts",
-          "columnIds": [
-            "districts_id"
-          ],
-          "x": 2171.6922999999997,
-          "y": 552.0769,
-          "direction": 8
-        },
-        "end": {
-          "tableId": "places",
-          "columnIds": [
-            "places_district_id"
-          ],
-          "x": 2159.7609666666667,
-          "y": 708.3217,
-          "direction": 4
         },
         "meta": {
           "updateAt": 1781107200000,
