@@ -50,4 +50,9 @@ public class Mission extends BaseTimeEntity {
     public static Mission create(Place place, String title, String description) {
         return new Mission(place, title, description);
     }
+
+    public void update(String title, String description) {
+        this.title = title;
+        this.description = description;
+    }
 }

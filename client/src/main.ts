@@ -20,4 +20,18 @@ const travelStore = useTravelStore();
 void travelStore.loadInitialData(authStore.user?.id);
 
 app.use(router);
+
+window.addEventListener('hidden-busan:unauthorized', () => {
+  authStore.logout();
+
+  if (router.currentRoute.value.name !== 'login') {
+    void router.push({
+      name: 'login',
+      query: {
+        redirect: router.currentRoute.value.fullPath,
+      },
+    });
+  }
+});
+
 app.mount('#app');

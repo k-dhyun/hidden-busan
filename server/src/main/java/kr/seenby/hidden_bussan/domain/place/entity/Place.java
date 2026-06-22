@@ -91,4 +91,26 @@ public class Place extends BaseTimeEntity {
     ) {
         return new Place(region, name, category, difficulty, description, address, imageUrl, duration, bestTime);
     }
+
+    public void update(
+            String region,
+            String name,
+            String category,
+            String difficulty,
+            String description,
+            String address,
+            String imageUrl,
+            String duration,
+            String bestTime
+    ) {
+        this.region = region;
+        this.name = name;
+        this.category = category;
+        this.difficulty = difficulty;
+        this.description = description;
+        this.address = address;
+        this.imageUrl = imageUrl;
+        this.duration = duration;
+        this.bestTime = bestTime;
+    }
 }

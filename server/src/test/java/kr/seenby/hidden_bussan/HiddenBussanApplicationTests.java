@@ -2,12 +2,10 @@ package kr.seenby.hidden_bussan;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 
-@SpringBootTest(properties = {
-		"spring.autoconfigure.exclude="
-				+ "org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration,"
-				+ "org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration"
-})
+@ActiveProfiles("test")
+@SpringBootTest
 class HiddenBussanApplicationTests {
 
 	@Test

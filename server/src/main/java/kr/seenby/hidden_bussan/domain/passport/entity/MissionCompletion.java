@@ -91,4 +91,11 @@ public class MissionCompletion {
     ) {
         return new MissionCompletion(user, mission, achievement, photoUrl, stampEmoji, memo, completedAt);
     }
+
+    public void updateCompletion(String photoUrl, String stampEmoji, String memo, LocalDate completedAt) {
+        this.photoUrl = photoUrl;
+        this.stampEmoji = stampEmoji;
+        this.memo = memo;
+        this.completedAt = completedAt;
+    }
 }

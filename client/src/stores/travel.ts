@@ -117,6 +117,7 @@ export const useTravelStore = defineStore('travel', {
       missionId: string;
       contentId: string;
       photoUrl: string;
+      stampEmoji?: string;
       memo: string;
     }) {
       const completion = await missionsApi.completeMission(input);

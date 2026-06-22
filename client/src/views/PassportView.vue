@@ -41,7 +41,7 @@ const collectedStampSlots = computed(() => [
     return {
       type: 'stamp' as const,
       id: completion.id,
-      emoji: badge?.emoji ?? '🏆',
+      emoji: completion.stampEmoji || badge?.emoji || '🏆',
       title: badge?.achievement.title ?? content?.name ?? '수집한 스탬프',
     };
   }),
@@ -308,11 +308,11 @@ function primaryAchievementBadgeForContent(contentId: string) {
                   class="h-full w-full object-cover"
                 />
                 <div
-                  v-if="primaryAchievementBadgeForContent(item.completion.contentId)"
+                  v-if="item.completion.stampEmoji || primaryAchievementBadgeForContent(item.completion.contentId)"
                   class="absolute left-2.5 top-2.5 grid h-8 w-8 place-items-center rounded-full bg-amber-400 text-sm shadow-sm"
                   :title="primaryAchievementBadgeForContent(item.completion.contentId)?.achievement.title"
                 >
-                  {{ primaryAchievementBadgeForContent(item.completion.contentId)?.emoji }}
+                  {{ item.completion.stampEmoji || primaryAchievementBadgeForContent(item.completion.contentId)?.emoji }}
                 </div>
               </div>
               <div class="flex flex-1 flex-col justify-between p-4">

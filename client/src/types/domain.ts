@@ -14,8 +14,6 @@ export interface District {
   id: string;
   label: string;
   region: string;
-  x: number;
-  y: number;
 }
 
 export interface Content {
@@ -29,10 +27,6 @@ export interface Content {
   image: string;
   duration: string;
   bestTime: string;
-  lat: number;
-  lng: number;
-  mapX: number;
-  mapY: number;
 }
 
 export interface Mission {
@@ -55,6 +49,7 @@ export interface MissionCompletion {
   missionId: string;
   contentId: string;
   photoUrl: string;
+  stampEmoji: string;
   memo: string;
   completedAt: string;
 }

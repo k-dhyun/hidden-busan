@@ -71,4 +71,18 @@ public class Achievement extends BaseTimeEntity {
     ) {
         return new Achievement(title, description, icon, conditionType, conditionValue, conditionTotal);
     }
+
+    public void update(
+            String description,
+            String icon,
+            String conditionType,
+            String conditionValue,
+            Integer conditionTotal
+    ) {
+        this.description = description;
+        this.icon = icon;
+        this.conditionType = conditionType;
+        this.conditionValue = conditionValue;
+        this.conditionTotal = conditionTotal;
+    }
 }

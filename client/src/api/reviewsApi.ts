@@ -18,7 +18,11 @@ export const reviewsApi = {
     comment: string;
   }): Promise<Review> {
     if (useRealApi) {
-      const { data } = await http.post<Review>(`/contents/${input.contentId}/reviews`, input);
+      const { data } = await http.post<Review>(`/contents/${input.contentId}/reviews`, {
+        contentId: input.contentId,
+        rating: input.rating,
+        comment: input.comment,
+      });
       return data;
     }
 

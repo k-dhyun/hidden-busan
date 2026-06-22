@@ -5,7 +5,7 @@ import type { Favorite } from '@/types/domain';
 export const favoritesApi = {
   async listFavorites(userId: string): Promise<Favorite[]> {
     if (useRealApi) {
-      const { data } = await http.get<Favorite[]>('/favorites', { params: { userId } });
+      const { data } = await http.get<Favorite[]>('/favorites');
       return data;
     }
 
@@ -13,7 +13,7 @@ export const favoritesApi = {
   },
   async toggleFavorite(userId: string, contentId: string): Promise<Favorite[]> {
     if (useRealApi) {
-      const { data } = await http.post<Favorite[]>('/favorites/toggle', { userId, contentId });
+      const { data } = await http.post<Favorite[]>('/favorites/toggle', { contentId });
       return data;
     }
 

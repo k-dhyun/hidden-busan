@@ -201,14 +201,17 @@ export const mockDb = {
     missionId: string,
     contentId: string,
     photoUrl: string,
+    stampEmoji: string | undefined,
     memo: string,
   ) => {
+    const nextStampEmoji = stampEmoji ?? '🏆';
     const existing = state.missionCompletions.find(
       (completion) => completion.userId === userId && completion.missionId === missionId,
     );
 
     if (existing) {
       existing.photoUrl = photoUrl;
+      existing.stampEmoji = nextStampEmoji;
       existing.memo = memo;
       existing.completedAt = today();
       persist();
@@ -221,6 +224,7 @@ export const mockDb = {
       missionId,
       contentId,
       photoUrl,
+      stampEmoji: nextStampEmoji,
       memo,
       completedAt: today(),
     };

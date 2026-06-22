@@ -4,9 +4,9 @@
   "settings": {
     "width": 2600,
     "height": 2000,
-    "scrollTop": -657,
-    "scrollLeft": -867,
-    "zoomLevel": 0.76,
+    "scrollTop": -718,
+    "scrollLeft": -227,
+    "zoomLevel": 0.79,
     "show": 511,
     "database": 1,
     "databaseName": "hidden_busan",
@@ -300,7 +300,7 @@
           "color": "#FFF4DE"
         },
         "meta": {
-          "updateAt": 1781625190765,
+          "updateAt": 1782036992551,
           "createAt": 1781107200000
         }
       },
@@ -377,8 +377,6 @@
           "places_image_url",
           "places_duration",
           "places_best_time",
-          "places_latitude",
-          "places_longitude",
           "places_created_at",
           "places_updated_at"
         ],
@@ -407,7 +405,7 @@
           "color": "#E7F3FF"
         },
         "meta": {
-          "updateAt": 1781626949994,
+          "updateAt": 1782036050143,
           "createAt": 1781107200000
         }
       }
@@ -1156,8 +1154,8 @@
       "achievements_icon": {
         "id": "achievements_icon",
         "tableId": "achievements",
-        "name": "emogi",
-        "comment": "도전과제 이모지",
+        "name": "icon",
+        "comment": "도전과제 아이콘",
         "dataType": "varchar(50)",
         "default": "",
         "options": 8,
@@ -1169,7 +1167,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1781626277434,
+          "updateAt": 1782036995045,
           "createAt": 1781107200000
         }
       },
@@ -1804,8 +1802,8 @@
         "ui": {
           "keys": 0,
           "widthName": 60,
-          "widthComment": 94,
-          "widthDataType": 80,
+          "widthComment": 85,
+          "widthDataType": 68,
           "widthDefault": 60
         },
         "meta": {
@@ -1958,7 +1956,7 @@
       "r_users_user_passport_stats": {
         "id": "r_users_user_passport_stats",
         "identification": true,
-        "relationshipType": 16,
+        "relationshipType": 8,
         "startRelationshipType": 2,
         "start": {
           "tableId": "users",
@@ -1979,7 +1977,7 @@
           "direction": 8
         },
         "meta": {
-          "updateAt": 1781107200000,
+          "updateAt": 1782036431932,
           "createAt": 1781107200000
         }
       },
@@ -2049,7 +2047,7 @@
           "columnIds": [
             "places_id"
           ],
-          "x": 2110.6206,
+          "x": 2109.6206,
           "y": 360.9534,
           "direction": 4
         },
@@ -2078,7 +2076,7 @@
             "places_id"
           ],
           "x": 1871.1206,
-          "y": 654.9534,
+          "y": 618.9534,
           "direction": 1
         },
         "end": {
@@ -2106,7 +2104,7 @@
             "places_id"
           ],
           "x": 1871.1206,
-          "y": 458.9534,
+          "y": 446.9534,
           "direction": 1
         },
         "end": {
