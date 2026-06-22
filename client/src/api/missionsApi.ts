@@ -2,6 +2,10 @@ import { http, useRealApi } from './http';
 import { mockDb } from './mockDb';
 import type { Mission, MissionCompletion } from '@/types/domain';
 
+interface MissionPhotoUploadResponse {
+  photoUrl: string;
+}
+
 export const missionsApi = {
   async listMissions(): Promise<Mission[]> {
     if (useRealApi) {
@@ -18,6 +22,17 @@ export const missionsApi = {
     }
 
     return mockDb.listCompletions(userId);
+  },
+  async uploadMissionPhoto(file: File): Promise<MissionPhotoUploadResponse> {
+    if (useRealApi) {
+      const formData = new FormData();
+      formData.append('file', file);
+
+      const { data } = await http.post<MissionPhotoUploadResponse>('/mission-completions/photos', formData);
+      return data;
+    }
+
+    return { photoUrl: URL.createObjectURL(file) };
   },
   async completeMission(input: {
     userId: string;

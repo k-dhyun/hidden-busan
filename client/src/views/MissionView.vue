@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { CheckCircle, ChevronLeft, FileText, Image, Sparkles, Stamp, Target, Upload } from 'lucide-vue-next';
-import { computed, ref } from 'vue';
+import { computed, onBeforeUnmount, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
+import { missionsApi } from '@/api/missionsApi';
 import { useAuthStore } from '@/stores/auth';
 import { useTravelStore } from '@/stores/travel';
 
@@ -10,20 +11,33 @@ const router = useRouter();
 const authStore = useAuthStore();
 const travelStore = useTravelStore();
 
-const photoUrl = ref('');
+const photoPreviewUrl = ref('');
+const completedPhotoUrl = ref('');
+const photoFile = ref<File | null>(null);
 const photoFileName = ref('');
 const memo = ref('');
 const submitted = ref(false);
+const submitting = ref(false);
 const errors = ref<{ photo?: string; memo?: string }>({});
 
 const missionId = computed(() => String(route.params.id ?? ''));
 const mission = computed(() => travelStore.getMissionById(missionId.value));
 const place = computed(() => (mission.value ? travelStore.getContentById(mission.value.contentId) : undefined));
+const submittedPhotoUrl = computed(() => completedPhotoUrl.value || photoPreviewUrl.value);
+const allowedPhotoTypes = new Set(['image/jpeg', 'image/png', 'image/webp']);
+const allowedPhotoExtensions = ['.jpg', '.jpeg', '.png', '.webp'];
+
+function revokePhotoPreview() {
+  if (photoPreviewUrl.value) {
+    URL.revokeObjectURL(photoPreviewUrl.value);
+    photoPreviewUrl.value = '';
+  }
+}
 
 function validate() {
   const nextErrors: { photo?: string; memo?: string } = {};
 
-  if (!photoUrl.value.trim()) {
+  if (!photoFile.value) {
     nextErrors.photo = '사진을 선택해주세요.';
   }
 
@@ -35,56 +49,78 @@ function validate() {
   return Object.keys(nextErrors).length === 0;
 }
 
+function isAllowedPhoto(file: File) {
+  const lowerName = file.name.toLowerCase();
+  const hasAllowedExtension = allowedPhotoExtensions.some((extension) => lowerName.endsWith(extension));
+
+  return allowedPhotoTypes.has(file.type) && hasAllowedExtension;
+}
+
+function resetPhotoInput(input?: HTMLInputElement) {
+  revokePhotoPreview();
+  completedPhotoUrl.value = '';
+  photoFile.value = null;
+  photoFileName.value = '';
+
+  if (input) {
+    input.value = '';
+  }
+}
+
 function handlePhotoChange(event: Event) {
   const input = event.target as HTMLInputElement;
   const file = input.files?.[0];
 
   if (!file) {
-    photoUrl.value = '';
-    photoFileName.value = '';
+    resetPhotoInput();
     return;
   }
 
-  if (!file.type.startsWith('image/')) {
-    photoUrl.value = '';
-    photoFileName.value = '';
-    errors.value = { ...errors.value, photo: '이미지 파일을 선택해주세요.' };
-    input.value = '';
+  if (!isAllowedPhoto(file)) {
+    resetPhotoInput(input);
+    errors.value = { ...errors.value, photo: 'JPG/PNG/WebP 사진을 선택해주세요.' };
     return;
   }
 
-  const reader = new FileReader();
-
-  reader.onload = () => {
-    photoUrl.value = String(reader.result ?? '');
-    photoFileName.value = file.name;
-    errors.value = { ...errors.value, photo: undefined };
-  };
-
-  reader.onerror = () => {
-    photoUrl.value = '';
-    photoFileName.value = '';
-    errors.value = { ...errors.value, photo: '사진을 불러오지 못했어요.' };
-    input.value = '';
-  };
-
-  reader.readAsDataURL(file);
+  revokePhotoPreview();
+  completedPhotoUrl.value = '';
+  photoFile.value = file;
+  photoFileName.value = file.name;
+  photoPreviewUrl.value = URL.createObjectURL(file);
+  errors.value = { ...errors.value, photo: undefined };
 }
 
 async function completeMission() {
-  if (!validate() || !authStore.user || !mission.value || !place.value) {
+  if (!validate() || !authStore.user || !mission.value || !place.value || !photoFile.value || submitting.value) {
     return;
   }
 
-  await travelStore.completeMission({
-    userId: authStore.user.id,
-    missionId: mission.value.id,
-    contentId: place.value.id,
-    photoUrl: photoUrl.value,
-    memo: memo.value,
-  });
-  submitted.value = true;
+  submitting.value = true;
+
+  try {
+    const { photoUrl } = await missionsApi.uploadMissionPhoto(photoFile.value);
+
+    await travelStore.completeMission({
+      userId: authStore.user.id,
+      missionId: mission.value.id,
+      contentId: place.value.id,
+      photoUrl,
+      memo: memo.value,
+    });
+
+    completedPhotoUrl.value = photoUrl;
+    revokePhotoPreview();
+    submitted.value = true;
+  } catch {
+    errors.value = { ...errors.value, photo: '사진 업로드에 실패했습니다. 다시 시도해주세요.' };
+  } finally {
+    submitting.value = false;
+  }
 }
+
+onBeforeUnmount(() => {
+  revokePhotoPreview();
+});
 </script>
 
 <template>
@@ -102,7 +138,7 @@ async function completeMission() {
         <p class="mt-2 font-semibold text-[#0055b3]">{{ place.name }} · {{ mission.title }}</p>
 
         <div class="mt-6 overflow-hidden rounded-2xl border border-blue-100 bg-white text-left shadow-sm">
-          <img :src="photoUrl" :alt="mission.title" class="h-48 w-full object-cover" />
+          <img :src="submittedPhotoUrl" :alt="mission.title" class="h-48 w-full object-cover" />
           <p class="p-4 text-sm italic text-[#4a6b8a]">{{ memo }}</p>
         </div>
 
@@ -152,7 +188,7 @@ async function completeMission() {
             >
               <input
                 class="sr-only"
-                accept="image/*"
+                accept="image/jpeg,image/png,image/webp"
                 capture="environment"
                 type="file"
                 @change="handlePhotoChange"
@@ -161,10 +197,10 @@ async function completeMission() {
               <span class="mt-3 text-sm font-semibold text-[#0055b3]">
                 {{ photoFileName || '사진 선택하기' }}
               </span>
-              <span class="mt-1 text-xs text-[#4a6b8a]">카메라로 찍거나 앨범에서 선택하세요.</span>
+              <span class="mt-1 text-xs text-[#4a6b8a]">JPG, PNG, WebP 사진을 선택하세요.</span>
             </label>
             <p v-if="errors.photo" class="mt-1 text-xs text-red-500">{{ errors.photo }}</p>
-            <img v-if="photoUrl" :src="photoUrl" alt="미리보기" class="mt-3 h-40 w-full rounded-xl object-cover" />
+            <img v-if="photoPreviewUrl" :src="photoPreviewUrl" alt="미리보기" class="mt-3 h-40 w-full rounded-xl object-cover" />
           </div>
 
           <div class="mt-5">
@@ -182,9 +218,11 @@ async function completeMission() {
 
           <button
             class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#0055b3] px-5 py-3 text-sm font-semibold text-white hover:bg-[#0044a0]"
+            :class="submitting ? 'cursor-not-allowed opacity-70' : ''"
+            :disabled="submitting"
             @click="completeMission"
           >
-            <CheckCircle class="h-4 w-4" /> 완료하기
+            <CheckCircle class="h-4 w-4" /> {{ submitting ? '업로드 중...' : '완료하기' }}
           </button>
         </div>
       </div>

@@ -44,6 +44,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET, "/api/missions").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/achievements").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/contents/*/reviews").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/uploads/**").permitAll()
                         .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
                         .anyRequest().authenticated()
                 )
