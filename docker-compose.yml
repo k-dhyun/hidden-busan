@@ -1,0 +1,18 @@
+services:
+  mariadb:
+    image: mariadb:11
+    container_name: hidden-busan-mariadb
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: hidden_busan
+      MARIADB_USER: hidden_busan
+      MARIADB_PASSWORD: hidden_busan
+      MARIADB_ROOT_PASSWORD: hidden_busan_root
+      TZ: Asia/Seoul
+    ports:
+      - "3306:3306"
+    volumes:
+      - hidden-busan-mariadb-data:/var/lib/mysql
+
+volumes:
+  hidden-busan-mariadb-data:
