@@ -1,0 +1,29 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  application:
+    name: hidden-busan
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/hidden_busan}
+    username: ${SPRING_DATASOURCE_USERNAME:hidden_busan}
+    password: ${SPRING_DATASOURCE_PASSWORD:hidden_busan}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQLDialect
+    open-in-view: false
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+app:
+  jwt:
+    issuer: ${JWT_ISSUER:hidden-busan}
+    secret: ${JWT_SECRET}
+    access-token-validity-seconds: ${JWT_ACCESS_TOKEN_VALIDITY_SECONDS:86400}
+  upload:
+    dir: ${UPLOAD_DIR:uploads}
+    public-base-url: ${UPLOAD_PUBLIC_BASE_URL:http://localhost:8080/uploads}
